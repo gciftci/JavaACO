@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 
 import main.java.inputs.KeyboardInputs;
 import main.java.inputs.MouseInputs;
+import static main.java.main.Game.GAME_WIDTH;
+import static main.java.main.Game.GAME_HEIGHT;
 // Constants
 
 public class GamePanel extends JPanel {
@@ -19,13 +21,13 @@ public class GamePanel extends JPanel {
         // Add Handlers to Listeners
         addKeyListener(keyboardInputs);
         addMouseListener(mouseInputs);
-        addMouseMotionListener(mouseInputs);
         this.game = game;
     }
 
     private void setPanelSize() {
-        Dimension size = new Dimension(1280, 800);
+        Dimension size = new Dimension(GAME_WIDTH, GAME_HEIGHT);
         setPreferredSize(size);
+        System.out.println("PanelSize: " + GAME_WIDTH + "/" + GAME_HEIGHT);
     }
 
     public void updateGame() {}
